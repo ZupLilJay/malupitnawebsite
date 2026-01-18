@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="portfolio(1).css" />
+  
+</head>
+<body>
+  
+  <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="Lesson.html" class="nav-link">Lesson Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+         <!-- Contact Me Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                
+                <p><h4>Email: rjc48588@gmail.com</h4></p>
+            </div>
+            <form id="contactForm" novalidate>
+                <label for="visitorName">Name:</label>
+                <input type="text" id="visitorName" name="visitorName" required />
+
+                <label for="visitorEmail">Email:</label>
+                <input type="email" id="visitorEmail" name="visitorEmail" required />
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript form validation and dialog
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = form.visitorName.value.trim();
+            const email = form.visitorEmail.value.trim();
+            const message = form.message.value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simple email format check
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            alert(`Thank you ${name}, your message has been received!`);
+            form.reset();
+        });
+    </script>
+  <footer>
+         <p>&copy; 2026 Rj G. Castillo Portfolio</p>
+  </footer>
+  
+</body>
+</html>
